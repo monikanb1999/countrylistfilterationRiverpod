@@ -1,16 +1,50 @@
-# weather_app
+# Countrylist Filteration Riverpod
 
-A new Flutter project.
+This feature allows users to filter a list of countries in real-time based on search input. Riverpod is used to manage the state of the country list and apply the filter logic efficiently.
+
+Key Steps:
+Data Source: The list of countries is either fetched from an API or stored locally in a model class. Each country has attributes like name, currency, and flagUrl for easy display and filtering.
+
+Riverpod State Management: We use a StateNotifier or StateNotifierProvider from Riverpod to manage the state of the country list. The state contains both the full list of countries and a filtered list, which gets updated based on user input.
+
+State: The state holds:
+allCountries: The full list of countries.
+filteredCountries: The list that matches the user's search query.
+isLoading: A boolean to track if data is being loaded.
+Filtering Logic: The filtering is triggered when the user types in the search bar. A StateNotifier method listens for changes to the search query and filters the country list based on whether the country name contains the search string.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. **Clone the repository:**
 
-A few resources to get you started if this is your first Flutter project:
+   ```sh
+   git clone https://your-repo-url/hCareV1.git
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Navigate to the project directory:**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```sh
+   cd hCareV1
+   ```
+
+3. **Install dependencies:**
+
+   ```sh
+   flutter pub get
+   ```
+
+4. **Run build_runner:**
+
+   ```sh
+   dart run build_runner build -d
+   ```
+
+5. **Run the app:**
+
+   ```sh
+   flutter run
+   ```
+
+### 1. `main.dart`
+
+- **Description**: Application entry point.
