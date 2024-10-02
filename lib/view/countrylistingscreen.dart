@@ -58,7 +58,6 @@ class CountryListingRP extends ConsumerWidget {
                           );
                         },
                         suggestionsBuilder: (BuildContext context, SearchController controller) {
-                          print('Monika====${controller.text}');
                           if (controller.text.isEmpty) {
                             return [
                               Center(
@@ -125,7 +124,13 @@ class CountryListingRP extends ConsumerWidget {
                                 Text('Currency: ${currency.currencies?.keys ?? currency?.cioc}'),
                               ],
                             ),
-                            trailing: Image.network(currency.flags.png),
+                            trailing: Image.network(
+                              currency.flags.png,
+                              width: MediaQuery.of(context).size.width * 0.3, // 40% of screen width
+                              height:
+                                  MediaQuery.of(context).size.height * 0.22, // 25% of screen height
+                              fit: BoxFit.fill,
+                            ),
                           );
                         })
                   ])
